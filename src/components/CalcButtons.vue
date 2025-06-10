@@ -1,8 +1,8 @@
 <script setup>
-const emit = defineEmits(['append', 'clearAll'])
-function press(digit) {
-	emit('append', digit)
-}
+const emit = defineEmits(['append', 'clearAll']) //Aqui você está declarando quais eventos esse componente pode emitir.// defineEmits() é uma função especial no <script setup> que cria a função emit.
+function press(digit) {  //Essa função press é chamada, por exemplo, quando o usuário clica em um botão numérico.
+	emit('append', digit) // Ela dispara o evento 'append' e envia o dígito junto.
+} //Esse evento será capturado pelo componente pai, que irá atualizar num1 ou num2, dependendo do activeField.
 </script>
 <template>
 	<div class="input-btn-buttons">
@@ -55,5 +55,6 @@ function press(digit) {
 
 .zero-btn {
 	grid-column: span 2;
+		/*Faz o zero ficar do tamanho de duas casas do grid */
 }
 </style>
